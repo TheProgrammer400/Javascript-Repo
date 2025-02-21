@@ -38,3 +38,19 @@ the right corners of the rectagle stays in the canvas frame
 */
 
 animate()
+
+// clearing canvas with button
+
+function clearCanvas(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+}
+
+
+/*
+It may seem like above function isn't working for moving Rect,
+but the thing is animate() function is being called repeatedly.
+So, clear button remove the Rect but animate function
+quickly places another Rect
+
+Above statement can be verified by using static Rect
+*/
