@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d")
 let isDrawing = false
 let lastX = 0
 let lastY = 0
+let isEraser = false
 
 function mouseDownFunc(event){
     isDrawing = true
@@ -19,12 +20,15 @@ function mouseMoveFunc(event){
         return 
     }
 
-    ctx.lineTo(event.offsetX, event.offsetY) // last position of the new stroke
-    ctx.lineWidth = 2
-    ctx.lineCap = "round"
-    ctx.stroke()
-
-    [lastX, lastY] = [event.offsetX, event.offsetY]
+    if (isEraser){
+        ctx.clearRect(event.offsetX-5, event.offsetY-5, 20, 20)
+    } else {
+        ctx.lineTo(event.offsetX, event.offsetY) // last position of the new stroke
+        ctx.lineWidth = 2
+        ctx.lineCap = "round"
+        ctx.stroke()
+        [lastX, lastY] = [event.offsetX, event.offsetY]
+    }
 }
 
 function stopDrawing(){
@@ -42,6 +46,16 @@ function saveSignature(){
 
 function clearCanvas(){
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+}
+
+function toggleEraser(){
+    if (isEraser){
+        isEraser = false
+        document.getElementById("eraserbutton").innerText = "Use Eraser"
+    } else {
+        isEraser = true
+        document.getElementById("eraserbutton").innerText = "Use Pen"
+    }
 }
 
 canvas.addEventListener("mousedown", mouseDownFunc);
