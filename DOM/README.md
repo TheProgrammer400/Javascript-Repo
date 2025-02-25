@@ -13,7 +13,7 @@ The **DOM (Document Object Model)** in JavaScript is basically the way your brow
 
 DOM method used to select a single HTML element by its `id` attribute.
 
-```
+```Javascript
 const element = document.getElementById("idOfElement")
 ```
 
@@ -57,7 +57,7 @@ You can directly modify CSS properties of an elements using `.style`.
 
 Example:
 
-```
+```Javascript
 let title = document.getElementById("id-name")
 title.style.Color = "red"
 title.style.borderRadius = "5px"
@@ -71,14 +71,14 @@ Helps in **dynamically updating content** without modifying the underlying HTML 
 
 Use `.innerText` to retrieve the text inside an element.
 
-```
+```Javascript
 let element = document.getElementById("id-name")
 console.log(element.innerText)
 ```
 
 To change to the text:
 
-```
+```Javascript
 let element = document.getElementById("id-name")
 element.innerText = "updated text"
 ```
@@ -99,3 +99,51 @@ This property **retrieves or sets** the text inside the element, including hidde
 - When performance matters.
 - If you don't care about layout and formatting.
 
+
+## Injecting & Retrieving HTML Content
+
+The `.innerHTML` property allows you to **get or set** the HTML content inside an element. Unlike `.innerText` and `.textContent`, it **interprets HTML tags** rather than treating them as a plain text.
+
+Example:
+
+```HTML
+<div id="container">
+    <p>Hello <strong>World!</strong></p>
+</div>
+<button onclick="showHTML()">Get HTML</button>
+
+<script>
+    function showHTML() {
+        const container = document.getElementById("container");
+        console.log(container.innerHTML);
+    }
+</script>
+```
+
+Output:
+
+```HTML
+<p>Hello <strong>World!</strong></p>
+```
+
+It can be seen that `.innerHTML` returns both text and HTML tags.
+
+## Modifying The Text Dynamically
+
+You can use `.innerHTML` to **replace** existing content with nwe HTML.
+
+Example:
+
+```HTML
+<div id="content">Old Content</div>
+<button onclick="changeHTML()">Change Content</button>
+
+<script>
+    function changeHTML() {
+        document.getElementById("content").innerHTML = "<h2>New Content Added!</h2>";
+    }
+</script>
+```
+
+- **Before clicking**: "Old Content"
+- **After clicking**: `<h2>New Content Added!</h2>`
