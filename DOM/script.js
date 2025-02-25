@@ -14,3 +14,14 @@ Note:
 // h1[0].setAttribute("class", "test")
 console.log(h1)
 // console.log(h1[0].getAttribute("class"))
+
+
+
+// styling the elements after selecting them
+
+t1.style.color = "brown"
+t1.style.backgroundColor = "white"
+t1.style.borderRadius = "5px"
+
+
+console.log(t1.textContent) // text inside the h1 heading
