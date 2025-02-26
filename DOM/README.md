@@ -147,3 +147,47 @@ Example:
 
 - **Before clicking**: "Old Content"
 - **After clicking**: `<h2>New Content Added!</h2>`
+
+
+## NodeList in Javascript
+
+A **NodeList** is a collection of **DOM Nodes** (elements, text or comments) that Javascript returns when selecting multiple elements from the page. It's kinda like an **array**, but with some quirks.
+
+### How Do You Get a NodeList?
+
+- `document.querySelectorAll("selector")`
+- `childNodes` (includes elements, text etc.)
+
+To loop over the NodeList, we can use `.forEach()`
+
+## HTML Collection in Javascript
+
+An HTML Collection is a **live collection** of HTML elements that Javascript returns when selecting multiple elements from the page. Unlike a NodeList, **HTML Collection updates automatically when DOM changes**.
+
+### How Do You Get HTML Collection?
+
+- `document.getElementByTagName("tag")`
+- `document.getElementsByClassName("class-name")`
+- `document.forms` (All `<form>` elements on the page)
+- `document.images` (All `<img>` elements on the page)
+
+Unlike NodeList, here `.forEach()` can't be used to loop over an HTML Collection.
+
+### Looping Over An HTML Collection
+
+- Using for loop:
+
+    ```Javascript
+    const items = document.getElementsByClassName("item");
+
+    for (let i = 0; i < items.length; i++) {
+        console.log(items[i].textContent);
+    }
+    ```
+
+- Converting to an Array:
+
+    ```Javascript
+    const itemsArray = Array.from(document.getElementsByClassName("item"));
+    itemsArray.forEach(item => console.log(item.textContent));
+    ```
