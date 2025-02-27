@@ -76,7 +76,7 @@ let element = document.getElementById("id-name")
 console.log(element.innerText)
 ```
 
-To change to the text:
+To change the text:
 
 ```Javascript
 let element = document.getElementById("id-name")
