@@ -191,3 +191,35 @@ Unlike NodeList, here `.forEach()` can't be used to loop over an HTML Collection
     const itemsArray = Array.from(document.getElementsByClassName("item"));
     itemsArray.forEach(item => console.log(item.textContent));
     ```
+
+## Creating Pure Text in Javascript
+
+`document.createTextNode()` method **creates a text node** in Javacript. Ulike `.innerHTML`, it doesn't allow adding HTML elements -- just raw text.
+
+### 1. Basic Syntax
+
+```Javascript
+let textNode = document.createTextNode("Hello world!")
+```
+
+
+This just create the text node, **doesn't add to the page yet**.
+
+### 2. Appending to an Element
+
+```HTML
+<div id="container"></div>
+
+<script>
+    let textNode = document.createTextNode("Hello world!"); 
+    let container = document.getElementById("container"); 
+    container.appendChild(textNode);
+</script>
+```
+
+Now, "Hello world" will be inside the `<div id="container"></div>`.
+
+### Use cases:
+
+- When you want to *safely add user-generated text* (avoiding HTML injection).
+- When working with *document fragments* and dynamically building content.
