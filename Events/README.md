@@ -98,7 +98,7 @@ btn.removeEventListener("click", sayHello);
 ```
 
 
-## Progess Bar Explanation
+# Progess Bar Explanation
 
 Understanding line by line:
 
