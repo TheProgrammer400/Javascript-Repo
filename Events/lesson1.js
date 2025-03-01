@@ -42,3 +42,37 @@ hoverButton.addEventListener("mouseover", function () {
     let para = document.querySelector("#hoverpara")
     para.textContent = `Hovering count: ${count}`
 })
+
+
+// keydown event
+
+document.addEventListener("keydown", function (event){
+    let para = document.querySelector("#keydownpara")
+    para.textContent = `You pressed: ${event.key}`
+})
+
+
+// input event
+
+const textEntry1 = document.querySelector("#inputevent")
+
+textEntry1.addEventListener("input", function (event){
+    let para = document.querySelector("#inputpara")
+    para.textContent = `Typed: ${event.target.value}`
+})
+
+/*
+event.target refers to the input field,
+while event.target.value represents the 
+value inside the text entry or the input field.
+*/
+
+
+// change event
+
+const textEntry2 = document.querySelector("#changeEvent")
+
+textEntry2.addEventListener("change", function (event){
+    let para = document.querySelector("#changepara")
+    para.textContent = `Typed: ${event.target.value}`
+})

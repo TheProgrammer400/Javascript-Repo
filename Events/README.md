@@ -96,3 +96,57 @@ function sayHello() {
 btn.addEventListener("click", sayHello);
 btn.removeEventListener("click", sayHello);
 ```
+
+
+## Progess Bar Explanation
+
+Understanding line by line:
+
+1. `window.scrollY`:
+
+    ```Javascript
+    const scrollTop = window.scrollY;
+    ```
+
+    `window.scrollY` gives you **how many pixels** you've scrolled **vertically** from top of the page.
+
+    ### Key Points:
+
+    - `scrollY = 0` → You're at the top of the page.
+    - `scrollY > 0` → You've scrolled **down**.
+    - `scrollY` keeps **increasing** as you scroll further.
+    - If you scroll up, `scrollY` **decreases**.
+
+2. `scrollHeight`:
+
+    ```Javascript
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    ```
+
+    This line **calculates the total scrollable height** of the page.
+
+    ### Explanation:
+
+    1. `document.documentElement.scorllHeight`
+        - This gives the **total height** of the document (including the part **off-screen**).
+        - Basically, the full height **if there was no scrolling**.
+    
+    2. `window.innerHeight`
+        - This gives the **visible height** of the screen (the viewport).
+        - Basically, **how much of the page is visible at the time**.
+
+    3. Subtracting Both (`scrollHeight - innerHeight`)
+        - This gives **how much we can actually scroll**.
+        - **Example**:
+            - Total page height: `2000px`
+            - Visible screen height: `800px`
+            - Scrollable height: `2000 - 800 = 1200px`
+            - This denotes that you can scroll `1200px` before hitting the bottom.
+
+3. **Scroll progess**:
+
+    ```Javascript
+    const scrollPercent = (window.scrollY / scrollHeight) * 100;
+    ```
+
+    This helps in tracking the **scroll progress**, so we can calculate **how far the user has scrolled** in **percentage**.
