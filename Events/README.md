@@ -5,7 +5,7 @@ An event in JavaScript is an action or occurrence that happens in the browser, t
 For example:
 
 - **Clicking a button** → `click` event
-- ** Typing in a input field** → `input` or `keydown` event
+- **Typing in a input field** → `input` or `keydown` event
 - **Hovering over an element** → `mouseover` event
 - **Scrolling the page** → `scroll` event
 - **Loading the page** → `load` event
