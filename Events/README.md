@@ -100,6 +100,20 @@ btn.removeEventListener("click", sayHello);
 
 # Progess Bar Explanation
 
+Javascript Code for progress bar:
+
+```Javascript
+const progressBar = document.getElementById("progressBar");
+
+window.addEventListener("scroll", function () {
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+    progressBar.style.width = scrollPercent + "%";
+});
+```
+
 Understanding line by line:
 
 1. `window.scrollY`:
