@@ -28,7 +28,7 @@ btn.addEventListener("click", function () {
 | Event Type | Description                          |
 | -----------| -------------------------------------|
 | `click`    | When an element is clicked           |
-| `dbclick`  | When an element is double clicked    |
+| `dblclick`  | When an element is double clicked    |
 | `mouseover`| When mouse hovers over an element    |
 | `mouseout` | When mouse moves out of the element  |
 | `keydown`  | When a key is pressed                |
