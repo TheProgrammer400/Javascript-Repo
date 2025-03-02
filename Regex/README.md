@@ -109,7 +109,7 @@ console.log(text.split(/[,; ]+/)); // ["apple", "banana", "orange", "grape"]
 
 ## Practical Example
 
-### 1. Validate and Email
+### 1. Validate an Email
 
 ```Javascript
 const email = "user@example.com";
