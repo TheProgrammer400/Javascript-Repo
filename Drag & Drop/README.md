@@ -14,7 +14,7 @@ This loop adds a **dragstart** event listener to each element with the class `"l
 
     - For every `list` item, we attach a **dragstart** event listener.
     - When a user starts dragging an item, the **dragstart** event triggers.
-    - `event.target` refers to the **element being targeted`**.
+    - `event.target` refers to the **element being targeted**.
     - The element is stored in the `selected` variable so it can be accessed later.
 
 ### Purpose
@@ -40,6 +40,6 @@ This allows dragged elements to be **dropped** inside `rightBox`.
 
 By default, dragging something **does not allow dropping** in most elements. Calling `event.preventDefault()` **prevents the default behaviour** and tells the browser to **let the user drop stuff here**.
 
-Without `event.preventDefault()`, the `drop` wouldn't fire, and the dragged item wouldn't be able to be placed inside `rightBox`.
+Without `event.preventDefault()`, the `drop` event wouldn't fire, and the dragged item wouldn't be able to be placed inside `rightBox`.
 
 #### Same things are being done for the `leftBox`.
